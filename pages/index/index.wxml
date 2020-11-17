@@ -1,36 +1,17 @@
 <!--index.wxml-->
-<view class="container">
-  <textarea name='content' placeholder="请输出留言内容" class="content"></textarea>
-  <input name='username' placeholder="用户名" />
+<view class="container" id="write">
+<form bindsubmit="saveGbook">
+  <textarea name='content' placeholder="请输出留言内容" class="content" value="{{content}}"></textarea>
+  <input name='username' placeholder="用户名" value="{{username}}" />
   <button form-type="submit" style="width:100%" type="primary">发表留言</button>
+</form>
 </view>
-<view class="container">
-  <view class="msg">
+<scroll-view class="container" scroll-y enable-flex bindscrolltolower="more" style="height:{{height}}px" >
+  <view class="msg" wx:for="{{msgs.data}}" wx:key="id">
     <view class="info">
-      <text>用户名</text>
-      <text>2020-11-17</text>
+      <text>{{item.username}}</text>
+      <text>{{item.created_at}}</text>
     </view>
-    <text class="msgtext">留言内容</text>
+    <text class="msgtext">{{item.content}}</text>
   </view>
-  <view class="msg">
-    <view class="info">
-      <text>用户名</text>
-      <text>2020-11-17</text>
-    </view>
-    <text class="msgtext">留言内容</text>
-  </view>
-  <view class="msg">
-    <view class="info">
-      <text>用户名</text>
-      <text>2020-11-17</text>
-    </view>
-    <text class="msgtext">留言内容</text>
-  </view>
-  <view class="msg">
-    <view class="info">
-      <text>用户名</text>
-      <text>2020-11-17</text>
-    </view>
-    <text class="msgtext">留言内容</text>
-  </view>
-</view>
+</scroll-view>
