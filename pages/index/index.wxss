@@ -1,0 +1,30 @@
+.content {
+  background: #f8f8f8;
+  height: 150rpx;
+  width: 100%;
+}
+
+input {
+  background: #f8f8f8;
+  margin: 10px 0;
+  padding: 5rpx;
+}
+
+.msg {
+  background: #f8f8f8;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  padding: 4rpx;
+  color: #666;
+}
+
+.msg .info {
+  font-size: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.msg .msgtext {
+  font-size: 0.8rem;
+}
